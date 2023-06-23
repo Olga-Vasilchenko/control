@@ -1,6 +1,6 @@
 package org.example;
 
-public class Toy {
+public class Toy implements Comparable<Toy> {
     public int id;
     public String name;
     public int weight;
@@ -36,10 +36,8 @@ public class Toy {
     public String toString() {
         return "Идентификатор игрушки: " + id + "; Имя: " + name + "; Вес: " + weight;
     }
-
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public int compareTo(Toy o) {
+        return o.getWeight() - this.getWeight();
     }
-
 }
